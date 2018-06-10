@@ -58,7 +58,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 <pre>import { Restangular } from 'ngx-restangular';</pre>
 
 
-6.) Create an instance of *`Restangular`* in the constructor
+6.) Create an object of *`Restangular`* in the constructor
 
 <pre>constructor(private restangular: Restangular) {}</pre>
 
