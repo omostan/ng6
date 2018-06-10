@@ -62,15 +62,32 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 <pre>import { Restangular } from 'ngx-restangular';</pre>
 
 
-6.) create in the constructor a private variable of Restangular
+6.) create an object of *`Restangular`* in the constructor
 
 <pre>constructor(private restangular: Restangular) {}</pre>
 
-7.) Finally, use it to fetch data from RESTful service or other Web API service
+7.) Create a method (e.g. getUsers()) and use this.restangular instance (in data.service.ts) to fetch data from RESTful service or other Web API service
 
 <pre>
     ngOnInit() {
         // GET http://localhost:4200/restservice.svc/users/
         this.restangular.all('users').doGET();
+    }
+</pre>
+
+8.) Finally, call the getUsers() method from the users.component.ts
+
+<pre>
+    ngOnInit() {
+        this.getUsers();
+    }
+
+    getUsers() {
+        this.dataService.getUsers().subscribe(
+        data => this.users = data,
+        err => console.error(err),
+        () => console.log('done fetching users!')
+        
+        )
     }
 </pre>
