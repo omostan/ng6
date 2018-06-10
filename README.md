@@ -25,3 +25,52 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+### Using Restangular with Angular 6 (step-by-step)
+
+1.) Run `npm install ngx-restangular` to install the latest version of ngx-restangular
+
+2.) Import the module into the module.ts
+*`import { Restangular } from 'ngx-restangular'`*
+
+3.) Include a function in module.ts for setting the default restangular configuration
+
+<pre>
+    export function RestangularConfigFactory(RestangularProvider) {
+        RestangularProvider.setBaseUrl('http://localhost:4200/restservice.svc');
+        RestangularProvider.setDefaultHeaders('Authorization': 'Bearer UDXPx-Xko0w4BRKajozCVy20X11MRZs1')
+    }
+</pre>
+
+4.) Add *`RestangularModule`* to the imports in module.ts
+
+<pre>
+    @NgModule({
+        bootstrap: [ AppComponent ],
+        declarations: [
+            AppComponent,
+        ],
+        imports: [
+            // Importing RestangularModule and making default configs for restangular
+            RestangularModule.forRoot(RestangularConfigFactory),
+        ]
+    })
+</pre>
+
+5.) In the component (e.g. data.service.ts) where it has to be used, import *`Restangular`*
+
+<pre>import { Restangular } from 'ngx-restangular';</pre>
+
+
+6.) create in the constructor a private variable of Restangular
+
+<pre>constructor(private restangular: Restangular) {}</pre>
+
+7.) Finally, use it to fetch data from RESTful service or other Web API service
+
+<pre>
+    ngOnInit() {
+        // GET http://localhost:4200/restservice.svc/users/
+        this.restangular.all('users').doGET();
+    }
+</pre>
