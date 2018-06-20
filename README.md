@@ -22,7 +22,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Using Restangular with Angular 6 (step-by-step)
+## Using Restangular To Make WCF-RESTService Calls (step-by-step)
 
 1.) Run `npm install ngx-restangular` to install the latest version of ngx-restangular
 
