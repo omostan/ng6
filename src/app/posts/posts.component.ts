@@ -36,12 +36,11 @@ export class PostsComponent implements OnInit {
   getPosts() {
     this.dataService.getPosts().subscribe(
       data => {
-        //console.log('posts from data service: ', data)
-        this.posts = data
+        // console.log('posts from data service: ', data)
+        this.posts = data;
       },
       err => console.error(err),
       () => console.log('done fetching post data!')
-      
-    )
+    );
   }
 }

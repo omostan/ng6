@@ -29,23 +29,22 @@ export class DetailsComponent implements OnInit {
   user: Object;
 
   constructor(private dataService: DataService, private route: ActivatedRoute) {
-    this.route.params.subscribe( params => this.user = params.id)
+    this.route.params.subscribe( params => this.user = params.id);
    }
 
   ngOnInit() {
-    this.getUser()
+    this.getUser();
   }
 
   getUser() {
     this.dataService.getUser(this.user).subscribe(
       data => {
-        //console.log('user details from data service: ', data)
-        this.user = data
+        // console.log('user details from data service: ', data)
+        this.user = data;
       },
       err => console.error(err),
       () => console.log('done fetching user details!')
-      
-    )
+    );
   }
 
 }

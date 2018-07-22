@@ -10,12 +10,12 @@ import { DetailsComponent } from './details/details.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RestangularModule } from 'ngx-restangular'
+import { RestangularModule } from 'ngx-restangular';
 
 // Function for setting the default restangular configuration
 export function RestangularConfigFactory(RestangularProvider) {
   RestangularProvider.setBaseUrl('https://jsonplaceholder.typicode.com/');
-  RestangularProvider.setDefaultHeaders({'Authorization': 'Bearer UDXPx-Xko0w4BRKajozCVy20X11MRZs1'})
+  RestangularProvider.setDefaultHeaders({'Authorization': 'Bearer UDXPx-Xko0w4BRKajozCVy20X11MRZs1'});
 }
 
 // AppModule is the main entry point into Angular bootstraping process
@@ -33,7 +33,7 @@ export function RestangularConfigFactory(RestangularProvider) {
     , AppRoutingModule
     , HttpClientModule
     , BrowserAnimationsModule
-    , RestangularModule.forRoot(RestangularConfigFactory)        
+    , RestangularModule.forRoot(RestangularConfigFactory)
   ],
   providers: [],
   bootstrap: [AppComponent]

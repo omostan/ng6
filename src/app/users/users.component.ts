@@ -37,13 +37,12 @@ export class UsersComponent implements OnInit {
   getUsers() {
     this.dataService.getUsers().subscribe(
       data => {
-        //console.log('users\' from data service: ', data)
+        // console.log('users\' from data service: ', data)
         this.users = data;
       },
       err => console.error(err),
       () => console.log('done fetching users!')
-      
-    )
+    );
   }
 
 }
