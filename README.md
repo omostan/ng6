@@ -27,14 +27,14 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 1.) Run `npm install ngx-restangular` to install the latest version of ngx-restangular
 
 2.) Import the module into the module.ts
-*`import { Restangular } from 'ngx-restangular'`*
+*`import { RestangularModule } from 'ngx-restangular'`*
 
 3.) Include a function in module.ts for setting the default restangular configuration
 
 <pre>
     export function RestangularConfigFactory(RestangularProvider) {
         RestangularProvider.setBaseUrl('http://localhost:4200/restservice.svc');
-        RestangularProvider.setDefaultHeaders('Authorization': 'Bearer UDXPx-Xko0w4BRKajozCVy20X11MRZs1')
+        RestangularProvider.setDefaultHeaders({'Authorization': 'Bearer UDXPx-Xko0w4BRKajozCVy20X11MRZs1'})
     }
 </pre>
 
