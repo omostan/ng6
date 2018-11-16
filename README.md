@@ -27,9 +27,8 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 1.) Run `npm install ngx-restangular` to install the latest version of ngx-restangular
 
 2.) Import the module and factory into the module.ts
-*`import { RestangularModule } from 'ngx-restangular
-import { RestangularFactory } from 'ngx-restangular/lib/ngx-restangular.config'`*
 
+*`import { RestangularModule } from 'ngx-restangular'`*
 *`import { RestangularFactory } from 'ngx-restangular/lib/ngx-restangular.config'`*
 
 
