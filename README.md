@@ -28,7 +28,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 2.) Import the module and factory into the module.ts
 
-*`import { RestangularModule } from 'ngx-restangular'`*
+*`import { RestangularModule } from 'ngx-restangular'`* <br/>
 *`import { RestangularFactory } from 'ngx-restangular/lib/ngx-restangular.config'`*
 
 
