@@ -26,13 +26,12 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 1.) Run `npm install ngx-restangular` to install the latest version of ngx-restangular
 
-2.) Import the module and factory into the module.ts
+2.) Import the module into the module.ts
 
-*`import { RestangularModule } from 'ngx-restangular'`* <br/>
-*`import { RestangularFactory } from 'ngx-restangular/lib/ngx-restangular.config'`*
+*`import { RestangularModule } from 'ngx-restangular'`*
 
 
-3.) Include a function in module.ts for setting the default restangular configuration
+3.)  In module.ts, use RestangularProvider to configure the base URL for the REST-API service
 
 <pre>
     export function RestangularConfigFactory(RestangularProvider) {
@@ -50,7 +49,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
             AppComponent,
         ],
         imports: [
-            // Importing RestangularModule and making default configs for restangular
+            // Import RestangularModule and use the default config factory
             RestangularModule.forRoot(RestangularConfigFactory),
         ]
     })
